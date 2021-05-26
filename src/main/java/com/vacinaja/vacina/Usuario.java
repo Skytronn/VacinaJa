@@ -1,6 +1,6 @@
 
 package com.vacinaja.vacina;
 
-public class Usuario implements Administrador, Atendente {
+public class Usuario {
     String nome, cpf, data_registro, email, perfil;
 }
