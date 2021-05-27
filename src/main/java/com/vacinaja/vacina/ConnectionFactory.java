@@ -14,12 +14,13 @@ public class ConnectionFactory {
     public Connection obtemConexao() {
         try {
             Connection c = DriverManager.getConnection(
-                    "jdbc:mysql://" + host + ":" + porta + "/" + bd,
+                    "jdbc:mysql://" + host + ":" + porta + "/" + bd + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLagacyDatetimeCode=false&serverTimezone=UTC",
                     usuario,
                     senha
             );
             return c;
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             e.printStackTrace();
             return null;
         }
