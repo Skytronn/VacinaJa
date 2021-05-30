@@ -2,6 +2,7 @@
 
 USE VacinaJa;
 
+
 #Criando Tabelas
 
 CREATE TABLE Paciente (
@@ -19,7 +20,8 @@ CREATE TABLE Usuario(
 	cpf varchar(16) UNIQUE NOT NULL,
     data_registro timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP NOT NULL,
     email varchar(30) ,
-    perfil varchar(20) NOT NULL
+    perfil varchar(20) NOT NULL,
+    senha varchar(16) not null
 );
 
 #DROP TABLE USUARIO;
@@ -37,4 +39,6 @@ INSERT INTO PACIENTE(nome, idade, area_saude, endereco)
 
 INSERT INTO USUARIO(nome,cpf,email,perfil)
 	VALUES('Leonardo','834.022.930-30','leonardo@testevacinaja.com','Administrador');
+    
+select * from paciente;
     
