@@ -5,13 +5,13 @@ import java.sql.DriverManager;
 
 public class ConnectionFactory {
 
-    private String usuario = "root";
-    private String senha = "12345";
-    private String host = "localhost";
-    private String porta = "3306";
-    private String bd = "VacinaJa";
+    private static String usuario = "root";
+    private static String senha = "Jhonas17";
+    private static String host = "localhost";
+    private static String porta = "3306";
+    private static String bd = "vacinaja";
 
-    public Connection obtemConexao() {
+    public static Connection obtemConexao() {
         try {
             Connection c = DriverManager.getConnection(
                     "jdbc:mysql://" + host + ":" + porta + "/" + bd + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLagacyDatetimeCode=false&serverTimezone=UTC",
