@@ -1,12 +1,14 @@
 
-package com.vacinaja.vacina;
+package DAO;
 
+import Classes.ConnectionFactory;
+import Classes.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-public class UsuarioDAO {
+public class UsuarioDAO{
     
     public boolean existe(Usuario usuario){
         

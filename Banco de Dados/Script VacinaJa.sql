@@ -9,16 +9,17 @@ CREATE TABLE Paciente (
 	id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(50) NOT NULL,
     idade int(3) NOT NULL,
-    area_saude boolean NOT NULL,
-    endereco varchar(30) NOT NULL,
-    data_vacinacao date
+    areaSaude boolean NOT NULL,
+    endereco varchar(200) NOT NULL,
+    dataVacinacao date,
+    prioridade int(2) not null
 );
 
 CREATE TABLE Usuario(
-	ID	INT PRIMARY KEY auto_increment,
+	id	INT PRIMARY KEY auto_increment,
     nome varchar(50) NOT NULL,
 	cpf varchar(16) UNIQUE NOT NULL,
-    data_registro timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    dataRegistro timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP NOT NULL,
     email varchar(30) ,
     perfil varchar(20) NOT NULL,
     senha varchar(16) not null
@@ -34,11 +35,11 @@ DESCRIBE USUARIO;
 
 
 #Inserir dados na tabela:
-INSERT INTO PACIENTE(nome, idade, area_saude, endereco)
-			VALUES('Leonardo',24,0,'Rua vitorio ramalho');
+INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade)
+			VALUES('Leonardo',24,0,'Rua vitorio ramalho','3');
 
-INSERT INTO USUARIO(nome,cpf,email,perfil)
-	VALUES('Leonardo','834.022.930-30','leonardo@testevacinaja.com','Administrador');
+INSERT INTO USUARIO(nome,cpf,email,perfil, senha)
+	VALUES('Leonardo','834.022.930-30','leonardo@testevacinaja.com','Administrador','123456');
     
-select * from paciente;
+select * from usuario;
     

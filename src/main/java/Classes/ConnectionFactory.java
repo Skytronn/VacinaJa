@@ -1,4 +1,4 @@
-package com.vacinaja.vacina;
+package Classes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

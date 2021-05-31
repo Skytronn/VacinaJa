@@ -1,14 +1,12 @@
-package com.vacinaja.vacina;
+package Classes;
 import com.mysql.cj.xdevapi.PreparableStatement;
-import com.vacinaja.vacina.ConnectionFactory;
+import Classes.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        //('Joao',70,1,'Caixa 12, Praça da Sé')
-        //Inserir
         
         String nome,endereco;
         boolean area_saude = true;
