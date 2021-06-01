@@ -41,5 +41,5 @@ INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade)
 INSERT INTO USUARIO(nome,cpf,email,perfil, senha)
 	VALUES('Leonardo','834.022.930-30','leonardo@testevacinaja.com','Administrador','123456');
     
-select * from usuario;
+select * from paciente;
     
