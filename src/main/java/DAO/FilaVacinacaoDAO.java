@@ -5,10 +5,7 @@
  */
 package DAO;
 
-/**
- *
- * @author leona
- */
+
 public class FilaVacinacaoDAO {
     
 }
