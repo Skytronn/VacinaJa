@@ -1,6 +1,6 @@
-package Classes;
+package Model;
 
 public class Relatorio {
-    int quantidade_vacinado;
+    int QuantidadeVacinado;
     
 }

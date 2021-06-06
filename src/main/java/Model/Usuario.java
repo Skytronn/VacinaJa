@@ -1,16 +1,17 @@
 
-package Classes;
+package Model;
 import DAO.UsuarioDAO;
+import Telas.LoginTela;
+import Telas.MenuAdm;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Usuario {
     private String nome,senha, cpf, email, perfil;
     private Date dataRegistro;
 
 
-public Usuario() {
-}
-    public Usuario (String nome, String senha, String cpf,Date dataRegistro,String email,String perfil){
+    public Usuario(String nome, String senha, String cpf,Date dataRegistro,String email,String perfil){
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
@@ -18,6 +19,7 @@ public Usuario() {
         this.email = email;
         this.perfil = perfil;
     }
+
 
     public String getNome() {
         return nome;
@@ -28,6 +30,7 @@ public Usuario() {
     }
 
     public String getSenha() {
+        
         return senha;
     }
 
@@ -65,8 +68,5 @@ public Usuario() {
 
     public void setPerfil(String perfil) {
         this.perfil = perfil;
-    }
-    public void Validacao(){
-  
     }
 }

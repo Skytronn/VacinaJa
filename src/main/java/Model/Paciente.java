@@ -1,4 +1,4 @@
-package Classes;
+package Model;
 import DAO.PacienteDAO;
 import java.util.Date;
 

@@ -1,41 +1,70 @@
 
 package DAO;
 
-import Classes.ConnectionFactory;
-import Classes.Usuario;
+import Model.Usuario;
+
+import Connection.ConnectionFactory;
+import Model.Login;
+import Model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UsuarioDAO{
     
-    public boolean existe(Usuario usuario){
-        
-        String sql = "SELECT * FROM usuario WHERE cpf = ?" + 
-                " AND senha = ? ";
+    public boolean check(String cpf, String senha){
+        boolean check = false;
         
         try{
-         
-            Connection conn = ConnectionFactory.obtemConexao();
-            
-            PreparedStatement pst = conn.prepareStatement(sql);
-            
-            pst.setString(1, usuario.getCpf());
-            pst.setString(2, usuario.getSenha());
-            
-            
-            //Executando o comando 'SELECT'
-            //e recebendo o retorno:
-            ResultSet resultado = pst.executeQuery();
-            
-            return resultado.next();
+           Connection conn = ConnectionFactory.obtemConexao();
+           PreparedStatement pst = conn.prepareStatement("SELECT * FROM usuario where cpf = ? AND senha = ?"); 
+           
+           pst.setString(1, cpf);
+           pst.setString(2, senha);
+           
+           //o cpf e senha estão armazenados aqui para podermos fazer o if abaixo
+           ResultSet rs = pst.executeQuery();
+          
+           if(rs.next()){
+               
+               check = true;
+   
+           }
+           
+            return check;
         }
         catch(Exception ex){
             ex.printStackTrace();
-            return false;
+            check = false;
+            return check;
         }
     }
+        public String Perfil(String cpf){
+        String perfil = "perfil";
+        
+        
+        
+        try{
+            Connection conn = ConnectionFactory.obtemConexao();
+           PreparedStatement pst = conn.prepareStatement("SELECT * FROM usuario where cpf = ?"); 
+           
+           pst.setString(1, cpf);
+
+           ResultSet rs = pst.executeQuery();
+           
+           rs.first();
+           perfil = rs.getString(perfil);
+           
+            return perfil;
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+            
+        }
+        return perfil;
+    }
+   
 }
-
-

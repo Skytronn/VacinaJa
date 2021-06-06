@@ -1,7 +1,8 @@
 package Telas;
 
 import DAO.UsuarioDAO;
-import Classes.Usuario;
+import Model.Login;
+import Model.Usuario;
 import javax.swing.JOptionPane;
 
 
@@ -35,6 +36,12 @@ public class LoginTela extends javax.swing.JFrame {
         loginTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginTextFieldActionPerformed(evt);
+            }
+        });
+
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
             }
         });
 
@@ -115,32 +122,37 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_loginTextFieldActionPerformed
 
     private void acessarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarButtonActionPerformed
-        String cpf = loginTextField.getText();
-        String senha = String.valueOf(
-                passwordField.getPassword());
         
-        try{
-            Usuario u = new Usuario();
-            u.setCpf(cpf);
-            u.setSenha(senha);
+        UsuarioDAO UserDAO = new UsuarioDAO();
+        String cpf = loginTextField.getText();
+        
+        String password = passwordField.getText();
+        String perfildao;
+//       Login login = new Login(cpf,password);
+ //       login.Validacao();
+ //       dispose();
+        JOptionPane.showMessageDialog(null,UserDAO.Perfil(cpf));
+        perfildao = UserDAO.Perfil(cpf);
+        //Codigo para acesso direto a DAO
+        if(UserDAO.check(cpf, password)){
             
-            UsuarioDAO uDAO = new UsuarioDAO();
-            if (uDAO.existe(u)){
-                JOptionPane.showMessageDialog(this,
-                        "Bem vindo, " + u.getCpf() + "!");
-            }else{
-                JOptionPane.showMessageDialog(this,
-                        "Usuario Invalido");
+            if(perfildao.equals("Administrador")){
+            new MenuAdm().setVisible(true);
+            dispose();
+            }else if(perfildao.equals("Atendente")){
+                new TelaFilaVacinacao().setVisible(true);
             }
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Login Invalido");
         }
-        catch(Exception ex){
-            JOptionPane.showMessageDialog(this, "Problemas técnicos,"
-                    + "tente mais tarde!");
-            ex.printStackTrace();
-        }
-                                            
-
+    
+        
     }//GEN-LAST:event_acessarButtonActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     public static void main(String args[]) {
      
