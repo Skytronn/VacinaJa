@@ -1,6 +1,6 @@
 package Telas;
 
-import DAO.UsuarioDAO;
+import DAO.LoginDAO;
 import Model.Login;
 import Model.Usuario;
 import javax.swing.JOptionPane;
@@ -123,31 +123,31 @@ public class LoginTela extends javax.swing.JFrame {
 
     private void acessarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessarButtonActionPerformed
         
-        UsuarioDAO UserDAO = new UsuarioDAO();
+        LoginDAO UserDAO = new LoginDAO();
+        
         String cpf = loginTextField.getText();
         
         String password = passwordField.getText();
-        String perfildao;
-//       Login login = new Login(cpf,password);
- //       login.Validacao();
- //       dispose();
+        
+        Login login = new Login(cpf,password);
+        
+        String perfil;
+   
         JOptionPane.showMessageDialog(null,UserDAO.Perfil(cpf));
-        perfildao = UserDAO.Perfil(cpf);
+        perfil = UserDAO.Perfil(cpf);
         //Codigo para acesso direto a DAO
-        if(UserDAO.check(cpf, password)){
+        if(UserDAO.check(login)){
             
-            if(perfildao.equals("Administrador")){
+            if(perfil.equals("Administrador")){
             new MenuAdm().setVisible(true);
             dispose();
-            }else if(perfildao.equals("Atendente")){
+            }else if(perfil.equals("Atendente")){
                 new TelaFilaVacinacao().setVisible(true);
             }
             
         }else{
             JOptionPane.showMessageDialog(null, "Login Invalido");
-        }
-    
-        
+        }       
     }//GEN-LAST:event_acessarButtonActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed

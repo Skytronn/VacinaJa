@@ -1,19 +1,19 @@
 package Model;
 
-import DAO.UsuarioDAO;
+import DAO.LoginDAO;
 import Telas.LoginTela;
 import Telas.MenuAdm;
 import Telas.TelaFilaVacinacao;
 import javax.swing.JOptionPane;
 
 public class Login {   
-    private String senha,cpf,perfil;
+    private String senha,cpf;
 
-    public Login(String cpf, String senha, String perfil){
+    public Login(String cpf, String senha){
         this.cpf = cpf;
         this.senha = senha;
-        this.perfil = perfil;
     }
+    
     public String getSenha() {
         return senha;
     }
@@ -28,26 +28,6 @@ public class Login {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public String getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
-    }
-        public boolean Validacao(){
-        UsuarioDAO UserDAO = new UsuarioDAO();
-        LoginTela Tlogin = new LoginTela();
-        if(UserDAO.check(cpf, senha)){
-            new MenuAdm().setVisible(true);
-            return true;
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Login Invalido");
-            return false;
-        }
     }
 }
 

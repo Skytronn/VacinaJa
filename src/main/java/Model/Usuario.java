@@ -1,26 +1,24 @@
 
 package Model;
-import DAO.UsuarioDAO;
+import DAO.LoginDAO;
 import Telas.LoginTela;
 import Telas.MenuAdm;
 import java.util.Date;
 import javax.swing.JOptionPane;
-
+import Model.Login;
 public class Usuario {
-    private String nome,senha, cpf, email, perfil;
+    private String nome, cpf, email, perfil, senha;
     private Date dataRegistro;
-
-
+    private Login login;
+    
     public Usuario(String nome, String senha, String cpf,Date dataRegistro,String email,String perfil){
+        
         this.nome = nome;
-        this.cpf = cpf;
-        this.senha = senha;
         this.dataRegistro = dataRegistro;
         this.email = email;
         this.perfil = perfil;
     }
-
-
+    
     public String getNome() {
         return nome;
     }
@@ -34,8 +32,10 @@ public class Usuario {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(Login login) {
+        senha = login.getSenha();
+        
+        this.login = login;
     }
 
     public String getCpf() {

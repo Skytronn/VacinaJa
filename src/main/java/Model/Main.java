@@ -5,11 +5,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import DAO.UsuarioDAO;
+import DAO.LoginDAO;
         
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+
+    public static void main(String[] args){
+        
         
 //        String nome,endereco;
 //        boolean area_saude = true;
@@ -37,10 +39,7 @@ public class Main {
 //           System.out.println("Conexão falhou");
 //           ex.printStackTrace();
 //       }         
-                
-        UsuarioDAO us = new UsuarioDAO();
-       
+           
         
-        System.out.println(us.Perfil("47368677873"));
     }     
 }
