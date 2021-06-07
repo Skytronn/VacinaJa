@@ -57,4 +57,9 @@ public class Usuario {
         usuarioDao.gravarUsuario(nome, cpf, email, perfil, senha);
         
     }
+    public void excluirUsuario(String cpfExcluido){
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+        
+        usuarioDao.excluirUsuario(cpfExcluido);
+    }
 }

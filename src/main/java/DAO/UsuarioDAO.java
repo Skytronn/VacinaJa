@@ -2,8 +2,12 @@ package DAO;
 
 import Connection.ConnectionFactory;
 import Model.Usuario;
+import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class UsuarioDAO {
@@ -26,6 +30,54 @@ public class UsuarioDAO {
             
             JOptionPane.showMessageDialog(null, "Usuario: \n" + nome + "\n Cadastrado com sucesso");
             
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    
+    //metodo para buscar a lista de usuarios no banco
+    public List<Usuario> lerUsuarios(){
+        Connection conn = ConnectionFactory.obtemConexao();
+        PreparedStatement pst = null;
+        List<Usuario> usuarios = new ArrayList<>();
+        String consulta = "SELECT * FROM usuario;";
+        try {
+            pst = conn.prepareStatement(consulta);
+            ResultSet rs = pst.executeQuery();
+           
+            
+            while(rs.next()){
+                Usuario usuario = new Usuario();
+                
+                usuario.setNome(rs.getString("nome"));
+                usuario.setCpf(rs.getString("cpf"));
+                usuario.setPerfil("perfil");
+                usuarios.add(usuario);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        return usuarios;
+    }
+    
+    //Metodo para excluir usuario pelo cpf
+    
+    public void excluirUsuario(String cpfExcluido){
+        String delete = "DELETE FROM usuario where cpf = ?";
+        Connection conn = ConnectionFactory.obtemConexao();
+        PreparedStatement pst = null;
+        
+        try {
+            pst = conn.prepareStatement(delete);
+            Usuario usuario = new Usuario();
+            
+            pst.setString(1, cpfExcluido);
+            
+            pst.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Usuario Excluido com sucesso");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
