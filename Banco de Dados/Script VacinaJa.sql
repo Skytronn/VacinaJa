@@ -36,7 +36,7 @@ DESCRIBE USUARIO;
 
 #Inserir dados na tabela:
 INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade)
-			VALUES('Leonardo',24,0,'Rua vitorio ramalho','3');
+			VALUES('teste',71,true,'Rua vitorio ramalho',3);
 
 INSERT INTO USUARIO(nome,cpf,email,perfil, senha)
 	VALUES('Pedro','47368677873','leonardo@testevacinaja.com','Administrador','123456');

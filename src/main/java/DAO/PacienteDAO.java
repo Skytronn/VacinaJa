@@ -11,10 +11,8 @@ public class PacienteDAO {
     public void novoPaciente(String nome, String endereco, int idade, boolean area_saude, int prioridade){
         String insert = "INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade) "
                 + "VALUES(?,?,?,?,?);";
-      //nome idade areaSaude, endereço, prioridade
-        System.out.println("PacienteDAO");
+      // Dados serão gravados nessa ordem de colunas no BD nome idade areaSaude, endereço, prioridade
         try {
-            System.out.println("Try");
             Paciente paciente = new Paciente();
             Connection conn = ConnectionFactory.obtemConexao();
             PreparedStatement pst = conn.prepareStatement(insert);

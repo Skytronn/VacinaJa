@@ -1,24 +1,11 @@
 
 package Model;
-import DAO.LoginDAO;
-import Telas.LoginTela;
-import Telas.MenuAdm;
+import DAO.UsuarioDAO;
 import java.util.Date;
-import javax.swing.JOptionPane;
 import Model.Login;
 public class Usuario {
     private String nome, cpf, email, perfil, senha;
-    private Date dataRegistro;
-    private Login login;
-    
-    public Usuario(String nome, String senha, String cpf,Date dataRegistro,String email,String perfil){
-        
-        this.nome = nome;
-        this.dataRegistro = dataRegistro;
-        this.email = email;
-        this.perfil = perfil;
-    }
-    
+
     public String getNome() {
         return nome;
     }
@@ -27,31 +14,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getSenha() {
-        
-        return senha;
-    }
-
-    public void setSenha(Login login) {
-        senha = login.getSenha();
-        
-        this.login = login;
-    }
-
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public Date getDataRegistro() {
-        return dataRegistro;
-    }
-
-    public void setDataRegistro(Date dataRegistro) {
-        this.dataRegistro = dataRegistro;
     }
 
     public String getEmail() {
@@ -68,5 +36,25 @@ public class Usuario {
 
     public void setPerfil(String perfil) {
         this.perfil = perfil;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }  
+
+    public void cadastrarUsuario(String nome, String cpf, String email, String perfil, String senha){
+        setNome(nome);
+        setCpf(cpf);
+        setEmail(email);
+        setSenha(senha);
+        
+        UsuarioDAO usuarioDao = new UsuarioDAO();
+        
+        usuarioDao.gravarUsuario(nome, cpf, email, perfil, senha);
+        
     }
 }
