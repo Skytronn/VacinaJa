@@ -9,7 +9,8 @@ public class Paciente extends PacienteDAO{
     private String endereco;
     private int idade;
     private boolean areaSaude;
-
+    private int id;
+    
     public String getNome() {
         return nome;
     }
@@ -41,9 +42,27 @@ public class Paciente extends PacienteDAO{
     public void setIdade(int idade) {
         this.idade = idade;
     }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public boolean getAreaSaude() {
         return areaSaude;
+    }
+    public String tableAreaSaude(){
+        
+        String tableAreaSaude = "Não";
+        
+        if(getAreaSaude()){
+            tableAreaSaude = "Sim";
+        }
+        
+        return tableAreaSaude;
     }
 
     public void setAreaSaude(boolean areaSaude) {
@@ -67,6 +86,14 @@ public class Paciente extends PacienteDAO{
         PacienteDAO pacienteDao = new PacienteDAO();
         
         pacienteDao.novoPaciente(nome, endereco, idade, areaSaude, prioridade);
+    }
+    
+    public void vacinarPaciente(int id){
+        PacienteDAO pacienteDao = new PacienteDAO();
+        setDataVacinacao(dataVacinacao);
+        pacienteDao.updateAreaSaude(id);
+        
+        
     }
     
 }

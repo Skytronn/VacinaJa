@@ -33,7 +33,8 @@ CREATE TABLE Usuario(
 DESCRIBE Paciente;
 DESCRIBE USUARIO;
 
-
+UPDATE paciente SET areaSaude = true WHERE id = 1 and areaSaude = false;
+SELECT * FROM paciente where areaSaude = false order by prioridade asc;
 #Inserir dados na tabela:
 INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade)
 			VALUES('teste',71,true,'Rua vitorio ramalho',3);
@@ -41,7 +42,18 @@ INSERT INTO PACIENTE(nome, idade, areaSaude, endereco, prioridade)
 INSERT INTO USUARIO(nome,cpf,email,perfil, senha)
 	VALUES('Pedro','47368677873','leonardo@testevacinaja.com','Administrador','123456');
     
-select * from usuario;
+SELECT * FROM paciente order by prioridade asc;
                 
 select * from usuario where cpf = '834.022.930-30' AND senha = '123456';
 select nome from usuario where cpf = '834.022.930-30';
+
+UPDATE paciente SET areaSaude = 1,dataVacinacao = NOW() WHERE id = 1 and areaSaude = false;
+
+UPDATE `vacinaja`.`paciente` SET `dataVacinacao`='2020-06-07' WHERE `id`='6';
+
+
+Select count(idade) from paciente;
+
+SELECT SUM(idade) AS total FROM paciente;
+SELECT SUM(idade) AS total FROM paciente where 70 <= idade < 90;
+

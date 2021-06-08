@@ -61,7 +61,7 @@ public class LoginDAO{
             return perfil;
         }
         catch(Exception ex){
-            ex.printStackTrace();
+            
             
         }
         return perfil;
