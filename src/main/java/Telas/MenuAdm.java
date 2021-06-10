@@ -114,7 +114,7 @@ public class MenuAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroUsuarioButtonActionPerformed
 
     private void relatorioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioButtonActionPerformed
-         new Relatorio().setVisible(true);
+         new TelaRelatorio().setVisible(true);
      dispose();
     }//GEN-LAST:event_relatorioButtonActionPerformed
 

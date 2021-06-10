@@ -33,6 +33,7 @@ CREATE TABLE Usuario(
 DESCRIBE Paciente;
 DESCRIBE USUARIO;
 
+select * from usuario;
 UPDATE paciente SET areaSaude = true WHERE id = 1 and areaSaude = false;
 SELECT * FROM paciente where areaSaude = false order by prioridade asc;
 #Inserir dados na tabela:
@@ -49,11 +50,18 @@ select nome from usuario where cpf = '834.022.930-30';
 
 UPDATE paciente SET areaSaude = 1,dataVacinacao = NOW() WHERE id = 1 and areaSaude = false;
 
-UPDATE `vacinaja`.`paciente` SET `dataVacinacao`='2020-06-07' WHERE `id`='6';
+UPDATE `vacinaja`.`paciente` SET `dataVacinacao`='2022-06-07',idade = 55 WHERE `id`=7;
+
+UPDATE paciente set idade = 95 where id = 7;
 
 
 Select count(idade) from paciente;
 
 SELECT SUM(idade) AS total FROM paciente;
 SELECT SUM(idade) AS total FROM paciente where 70 <= idade < 90;
+
+
+
+
+
 
