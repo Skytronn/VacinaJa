@@ -27,6 +27,7 @@ public class LoginTela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         acessarButton.setText("Acessar");
+        acessarButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         acessarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acessarButtonActionPerformed(evt);
@@ -133,7 +134,6 @@ public class LoginTela extends javax.swing.JFrame {
         
         String perfil;
    
-        JOptionPane.showMessageDialog(null,UserDAO.Perfil(cpf));
         perfil = UserDAO.Perfil(cpf);
         //Codigo para acesso direto a DAO
         if(UserDAO.check(login)){

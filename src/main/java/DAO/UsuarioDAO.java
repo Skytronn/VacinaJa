@@ -52,9 +52,10 @@ public class UsuarioDAO {
                 
                 usuario.setNome(rs.getString("nome"));
                 usuario.setCpf(rs.getString("cpf"));
-                usuario.setPerfil("perfil");
+                usuario.setPerfil(rs.getString("perfil"));
                 usuarios.add(usuario);
             }
+            pst.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

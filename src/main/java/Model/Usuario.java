@@ -31,6 +31,7 @@ public class Usuario {
     }
 
     public String getPerfil() {
+        System.out.println(perfil);
         return perfil;
     }
 
