@@ -20,6 +20,7 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) jTUsuarios.getModel();
         jTUsuarios.setRowSorter(new TableRowSorter(modelo));
+        setLocationRelativeTo(null);
         
         readJTable();
     }
@@ -53,9 +54,11 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         Apagar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consulta Usuario");
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jTUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,7 +88,8 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
         jTextPane1.setEditable(false);
         jTextPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextPane1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jTextPane1.setText("Edição de Usuarios");
+        jTextPane1.setForeground(new java.awt.Color(0, 102, 0));
+        jTextPane1.setText("Edição de Usuários");
         jScrollPane2.setViewportView(jTextPane1);
 
         Apagar.setText("Apagar");
@@ -103,6 +107,9 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\JoaoT\\Downloads\\4105938-account-card-id-identification-identity-card-profile-user-profile_113929.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,7 +117,10 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59)
@@ -123,7 +133,11 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,6 +211,7 @@ public class TelaConsultaUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Apagar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
