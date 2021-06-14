@@ -172,7 +172,7 @@
               <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\JoaoT\Downloads\1486564400-account_81513.png"/>
+              <Image iconType="3" name="/Imagens/1486564400-account_81513.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="      Cadastro Usu&#xe1;rio"/>
           </Properties>

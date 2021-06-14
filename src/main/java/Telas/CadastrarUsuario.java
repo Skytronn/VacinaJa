@@ -63,7 +63,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\JoaoT\\Downloads\\1486564400-account_81513.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1486564400-account_81513.png"))); // NOI18N
         jLabel1.setText("      Cadastro Usuário");
 
         perfilBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Atendente" }));
