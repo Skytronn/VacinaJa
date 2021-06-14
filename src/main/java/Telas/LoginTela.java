@@ -61,7 +61,7 @@ public class LoginTela extends javax.swing.JFrame {
         senhaLabel.setText("Senha");
 
         loginLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        loginLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\JoaoT\\Downloads\\Vacina Já  Logotipo (1).png")); // NOI18N
+        loginLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Vacina Já  Logotipo (1).png"))); // NOI18N
         loginLabel.setText("   Login");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

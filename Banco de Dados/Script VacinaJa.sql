@@ -33,9 +33,8 @@ CREATE TABLE Usuario(
 DESCRIBE Paciente;
 DESCRIBE USUARIO;
 
-alter table usuario modify email varchar(50);
 
-select * from usuario;
+SELECT * FROM usuario;
 UPDATE paciente SET areaSaude = true WHERE id = 1 and areaSaude = false;
 SELECT * FROM paciente where areaSaude = false order by prioridade asc;
 #Inserir dados na tabela:
@@ -64,6 +63,7 @@ Select count(idade) from paciente;
 SELECT SUM(idade) AS total FROM paciente;
 SELECT SUM(idade) AS total FROM paciente where 70 <= idade < 90;
 
+select TIMESTAMPDIFF(day, '2020-01-01', '2020-12-01') as totaldias;
 
 
 
