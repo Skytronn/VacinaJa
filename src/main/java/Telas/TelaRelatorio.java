@@ -163,7 +163,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTableMedia);
 
         Mes.setForeground(new java.awt.Color(0, 102, 0));
-        Mes.setText("Mês");
+        Mes.setText("Mes");
         Mes.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 MesFocusGained(evt);
@@ -195,7 +195,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
         });
 
         MesFim.setForeground(new java.awt.Color(0, 102, 0));
-        MesFim.setText("Mês");
+        MesFim.setText("Mes");
         MesFim.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 MesFimFocusGained(evt);

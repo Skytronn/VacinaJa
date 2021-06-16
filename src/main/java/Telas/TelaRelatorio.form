@@ -212,7 +212,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Dia"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Padr&#xe3;o"/>
+              <Color id="Default Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="ano" noResource="true"/>
           </Properties>
@@ -315,7 +315,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M&#xea;s"/>
+            <Property name="text" type="java.lang.String" value="Mes"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="MesFocusGained"/>
@@ -341,7 +341,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M&#xea;s"/>
+            <Property name="text" type="java.lang.String" value="Mes"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="MesFimFocusGained"/>
