@@ -19,7 +19,7 @@ public class RelatorioDAO {
 //        System.out.println(rel.getDataInicio());
 //        System.out.println(rel.getDataInicio());
         
-        String select = "SELECT SUM(idade) AS total FROM paciente where idade >= 90 and dataVacinacao >= ? and dataVacinacao <= ?;";
+        String select = "select TIMESTAMPDIFF(day, ?, ?) as total;";
         
         
         try {
@@ -50,7 +50,7 @@ public class RelatorioDAO {
         
         try {
            Connection conn = ConnectionFactory.obtemConexao();
-           PreparedStatement pst = conn.prepareStatement("SELECT SUM(idade) AS total FROM paciente where 70 <= idade < 90 and dataVacinacao >= ? and dataVacinacao <= ?;"); 
+           PreparedStatement pst = conn.prepareStatement("select TIMESTAMPDIFF(day, ?, ?) as total;"); 
            
            pst.setString(1, iniciosql);
            pst.setString(2, fimsql);
@@ -77,7 +77,7 @@ public class RelatorioDAO {
         
         try {
            Connection conn = ConnectionFactory.obtemConexao();
-           PreparedStatement pst = conn.prepareStatement("SELECT SUM(idade) AS total FROM paciente where idade >= 50 and idade < 70 and dataVacinacao >= ? and dataVacinacao <= ?;"); 
+           PreparedStatement pst = conn.prepareStatement("select TIMESTAMPDIFF(day, ?, ?) as total;"); 
            pst.setString(1, iniciosql);
            pst.setString(2, fimsql);
            
@@ -104,7 +104,7 @@ public class RelatorioDAO {
         
         try {
            Connection conn = ConnectionFactory.obtemConexao();
-           PreparedStatement pst = conn.prepareStatement("SELECT SUM(idade) AS total FROM paciente where idade < 50 and dataVacinacao >= ? and dataVacinacao <= ?;"); 
+           PreparedStatement pst = conn.prepareStatement("select TIMESTAMPDIFF(day, ?, ?) as total;"); 
            
            pst.setString(1, iniciosql);
            pst.setString(2, fimsql);

@@ -43,7 +43,7 @@ public class PacienteDAO {
         Connection conn = ConnectionFactory.obtemConexao();
         PreparedStatement pst = null;
         List<Paciente> pacientes = new ArrayList<>();
-        String consulta = "SELECT * FROM paciente where areaSaude = false order by prioridade asc;";
+        String consulta = "SELECT * FROM paciente where areaSaude = false order by prioridade asc,id asc;";
         
         try {
             pst = conn.prepareStatement(consulta);

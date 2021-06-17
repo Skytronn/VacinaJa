@@ -10,14 +10,15 @@ INSERT INTO `paciente` (`nome`,`idade`,`areaSaude`,`endereco`,`prioridade`,`data
 INSERT INTO `paciente` (`nome`,`idade`,`areaSaude`,`endereco`,`prioridade`,`dataVacinacao`) VALUES ("Gary Mercado",75,"1","P.O. Box 196, 9814 Elit Ave",3,"21-03-04"),("Fiona Cardenas",85,"0","7362 Velit. Ave",2,"21-02-12"),("Tate Rivers",104,"0","Ap #327-1164 Magna St.",3,"21-03-10"),("Anne Ewing",107,"0","P.O. Box 471, 3385 Auctor Av.",3,"21-05-20"),("Harper Knowles",94,"1","4076 Amet, St.",4,"21-05-16"),("Ila White",41,"0","P.O. Box 737, 1318 Sem. St.",3,"21-06-07"),("Lucius Nichols",76,"0","Ap #933-8990 Dolor Street",2,"21-05-16"),("Rowan Valentine",72,"0","Ap #822-5325 Diam Rd.",4,"21-03-16"),("Rudyard Britt",38,"1","Ap #568-706 Nullam Street",4,"21-04-13"),("Pandora Spence",60,"0","127-955 In Ave",2,"21-03-05");
 
 
-delete from paciente where id > 7;
+
+SELECT * FROM paciente where areaSaude = false order by prioridade asc,id asc;
 
 select * from paciente where idade < 90 and dataVacinacao >= '?' and dataVacinacao <= '?';
 #primeiraSoma
-
+select TIMESTAMPDIFF(day, '2020-06-07', '2030-06-07') as total;
 select * from paciente;
 
-SELECT SUM(idade) AS total FROM paciente where idade >= 90 and dataVacinacao >= '22-06-07' and dataVacinacao <= '22-06-07';
+SELECT SUM(idade) AS total FROM paciente where idade >= 90 and dataVacinacao >= '22-06-07' and dataVacinacao <= '31-06-07';
 
 #segundaSoma
 
